@@ -801,6 +801,16 @@ img.logo__mark--footer {
   font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; color: var(--text-soft);
 }
 
+/* depoimento em destaque: ocupa a largura toda e limita a medida do texto */
+.quote--feature {
+  grid-column: 1 / -1;
+  max-width: 820px;
+  margin-inline: auto;
+  padding: 2.4rem 2.2rem 2rem;
+}
+.quote--feature p + p { margin-top: 1rem; }
+.quote--feature footer { font-style: normal; }
+
 /* ---------- fachada na seção Atendimento ---------- */
 
 .fachada {
