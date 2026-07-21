@@ -53,7 +53,7 @@
 html { scroll-behavior: smooth; scroll-padding-top: 92px; -webkit-text-size-adjust: 100%; }
 
 /* o cabeçalho encolhe para 70px no celular, então a âncora acompanha */
-@media (max-width: 1080px) { html { scroll-padding-top: 84px; } }
+@media (max-width: 1240px) { html { scroll-padding-top: 84px; } }
 
 body {
   margin: 0;
@@ -240,8 +240,10 @@ img.logo__mark--footer {
   display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
   min-height: 78px;
 }
+/* o cabeçalho pode ser mais largo que o conteúdo, para o menu caber em uma linha */
+.site-header .wrap { max-width: 1320px; }
 
-.nav { display: flex; align-items: center; gap: 1.45rem; }
+.nav { display: flex; align-items: center; gap: 1.15rem; }
 .nav a {
   font-size: .82rem; font-weight: 500; color: var(--text-muted);
   position: relative; padding-block: .3rem;
@@ -253,6 +255,18 @@ img.logo__mark--footer {
 }
 .nav a:hover { color: var(--navy-800); }
 .nav a:hover::after { right: 0; }
+
+/* item de destaque: Manual de Empresas */
+.nav a.nav__cta {
+  color: var(--gold-700); font-weight: 600;
+  padding: .42rem .9rem;
+  border: 1px solid var(--border-gold); border-radius: 999px;
+  transition: color .2s ease, background .2s ease, border-color .2s ease;
+}
+.nav a.nav__cta::after { display: none; }
+.nav a.nav__cta:hover {
+  color: var(--navy-800); background: var(--gold-100); border-color: var(--gold-600);
+}
 
 .header-actions { display: flex; align-items: center; gap: .75rem; }
 
@@ -1008,10 +1022,17 @@ img.logo__mark--footer {
 
 /* ---------- responsivo ---------- */
 
-@media (max-width: 1080px) {
+@media (max-width: 1240px) {
   .nav { display: none; }
   .nav-toggle { display: flex; }
   .site-header__inner { min-height: 70px; }
+  .site-header .wrap { max-width: var(--wrap); }
+
+  /* no menu do celular o destaque vira linha comum, em dourado */
+  .nav.is-open a.nav__cta {
+    border: 0; border-bottom: 1px solid var(--border); border-radius: 0;
+    padding: .85rem 0; color: var(--gold-700);
+  }
 
   .nav.is-open {
     display: flex; flex-direction: column; align-items: flex-start; gap: .2rem;
