@@ -516,12 +516,13 @@ img.logo__mark--footer {
 .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.1rem; }
 .step {
   position: relative; padding: 2rem 1.5rem 1.7rem;
-  border: 1px solid rgba(232, 200, 106, .22);
+  border: 1px solid var(--border);
   border-radius: var(--radius);
-  background: rgba(255, 255, 255, .04);
-  transition: background .3s ease, border-color .3s ease, transform .3s ease;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow .3s ease, border-color .3s ease, transform .3s ease;
 }
-.step:hover { background: rgba(255, 255, 255, .08); border-color: rgba(232, 200, 106, .5); transform: translateY(-4px); }
+.step:hover { box-shadow: var(--shadow); border-color: var(--border-gold); transform: translateY(-4px); }
 .step__num {
   font-family: var(--font-serif); font-size: 2.7rem; font-weight: 500;
   line-height: 1; color: transparent;
@@ -529,8 +530,8 @@ img.logo__mark--footer {
   -webkit-background-clip: text; background-clip: text;
   display: block; margin-bottom: .9rem;
 }
-.step h3 { font-size: 1.22rem; margin-bottom: .5rem; }
-.step p { font-size: .9rem; color: var(--on-navy-muted); }
+.step h3 { font-size: 1.22rem; margin-bottom: .5rem; color: var(--navy-800); }
+.step p { font-size: .9rem; color: var(--text-muted); }
 
 /* ---------- caminhos ---------- */
 
@@ -632,6 +633,11 @@ img.logo__mark--footer {
   background: radial-gradient(circle, rgba(201, 162, 39, .10), transparent 68%);
   pointer-events: none;
 }
+
+/* o bloco Manual é um cartão branco, mesmo dentro da seção azul:
+   as cores internas seguem sendo escuras, não as herdadas do fundo navy */
+.section--navy .manual .eyebrow { color: var(--gold-700); }
+.section--navy .manual__head h3 { color: var(--navy-800); }
 
 .manual__head { margin-bottom: 1.6rem; }
 .manual__head h3 {
@@ -977,12 +983,19 @@ img.logo__mark--footer {
 
 /* --- fundo azul: versão dourada, cor preservada --- */
 
-#processo::before,
 #compromisso::before,
 #contato::before,
 .site-footer::before {
   background-image: url("imagens/marca-dagua-ouro.png");
   aspect-ratio: 1894 / 676;
+}
+
+/* processo passou a ter fundo claro: usa a versão escura dessaturada,
+   como no hero, para não virar um borrão dourado sobre o cinza */
+#processo::before {
+  background-image: url("imagens/marca-dagua.png");
+  aspect-ratio: 1671 / 681;
+  filter: grayscale(1) contrast(.85);
 }
 
 /* No celular a marca passa de 100vw para manter presença.
