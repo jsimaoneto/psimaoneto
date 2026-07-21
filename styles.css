@@ -52,6 +52,9 @@
 
 html { scroll-behavior: smooth; scroll-padding-top: 92px; -webkit-text-size-adjust: 100%; }
 
+/* o cabeçalho encolhe para 70px no celular, então a âncora acompanha */
+@media (max-width: 1080px) { html { scroll-padding-top: 84px; } }
+
 body {
   margin: 0;
   background: var(--bg);
@@ -62,6 +65,10 @@ body {
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  /* evita que e-mail ou endereço longo estourem a coluna no celular */
+  overflow-wrap: break-word;
+  /* remove o retângulo cinza do toque no Android */
+  -webkit-tap-highlight-color: rgba(201, 162, 39, .18);
 }
 
 img { max-width: 100%; display: block; }
@@ -890,7 +897,10 @@ img.logo__mark--footer {
 /* ---------- whatsapp flutuante ---------- */
 
 .wa-float {
-  position: fixed; right: 20px; bottom: 20px; z-index: 90;
+  position: fixed; z-index: 90;
+  right: 20px;
+  /* respeita a barra de gestos do iPhone */
+  bottom: calc(20px + env(safe-area-inset-bottom, 0px));
   width: 56px; height: 56px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   background: linear-gradient(140deg, #2fc25b, #128c40);
@@ -961,6 +971,11 @@ img.logo__mark--footer {
   aspect-ratio: 1894 / 676;
 }
 
+/* No celular a marca passa de 100vw para manter presença.
+   Sem isto ela vaza pelas laterais e o iOS permite arrastar a página
+   na horizontal, mesmo com overflow-x hidden no body. */
+#processo, #compromisso, #contato { overflow: hidden; }
+
 #processo::before   { width: min(820px, 88vw); opacity: .05; }
 #compromisso::before { width: min(900px, 92vw); opacity: .085; }
 #contato::before    { width: min(860px, 90vw); opacity: .06; }
@@ -1005,10 +1020,19 @@ img.logo__mark--footer {
     backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--border);
     padding: 1.2rem var(--gutter) 1.8rem;
-    max-height: calc(100vh - 70px); overflow-y: auto;
+    /* dvh acompanha a barra de endereço do celular; vh fica de reserva */
+    max-height: calc(100vh - 70px);
+    max-height: calc(100dvh - 70px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
     box-shadow: var(--shadow);
   }
-  .nav.is-open a { width: 100%; padding: .7rem 0; border-bottom: 1px solid var(--border); font-size: .95rem; }
+  /* alvo de toque com no mínimo 44px de altura */
+  .nav.is-open a {
+    width: 100%; padding: .85rem 0; border-bottom: 1px solid var(--border);
+    font-size: .95rem; min-height: 44px; display: flex; align-items: center;
+  }
 
   .grid-4 { grid-template-columns: repeat(2, 1fr); }
   .steps { grid-template-columns: repeat(2, 1fr); }
@@ -1033,8 +1057,20 @@ img.logo__mark--footer {
   .footer__grid { grid-template-columns: 1fr; }
   .logo__mark { width: 40px; height: 40px; }
   .logo__name { font-size: 1.02rem; }
-  .header-actions .btn { display: none; }
+  .logo__role { font-size: .58rem; letter-spacing: .14em; }
+
+  /* o botão Agendar continua visível, só encolhe.
+     Escondê-lo tirava a principal chamada de ação justamente
+     onde a maioria das visitas acontece. */
+  .header-actions .btn { padding: .55rem .9rem; font-size: .75rem; }
+
   .strip { flex-direction: column; align-items: flex-start; }
+}
+
+/* telas muito estreitas, tipo iPhone SE */
+@media (max-width: 380px) {
+  .logo__role { display: none; }
+  .header-actions .btn { padding: .5rem .75rem; font-size: .72rem; }
 }
 
 /* ---------- impressão ---------- */
