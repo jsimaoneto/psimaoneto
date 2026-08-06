@@ -321,6 +321,39 @@ img.logo__mark--footer {
 }
 .hero h1 em { font-style: italic; color: var(--gold-700); display: block; }
 
+.hero__subtitle {
+  margin-top: 1rem;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.25rem, 2.6vw, 1.7rem);
+  font-weight: 500;
+  color: var(--text-soft);
+  letter-spacing: -.01em;
+}
+
+/* ---------- FAQ ---------- */
+.faq {
+  max-width: 820px; margin: 0 auto;
+  display: grid; gap: 1rem;
+}
+.faq__item {
+  border: 1px solid var(--border-gold);
+  border-radius: 14px;
+  background: var(--gold-100);
+  padding: 1.4rem 1.6rem;
+}
+.faq__q {
+  font-family: var(--font-serif);
+  font-size: clamp(1.1rem, 2.2vw, 1.35rem);
+  font-weight: 600; letter-spacing: -.01em;
+  color: var(--navy, #0b1f3a);
+}
+.faq__a {
+  margin-top: .7rem;
+  color: var(--text-muted);
+  font-size: 1rem; line-height: 1.65;
+}
+
 .hero__lead {
   margin-top: 1.6rem; max-width: 54ch;
   font-size: 1.09rem; color: var(--text-muted);

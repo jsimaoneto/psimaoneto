@@ -34,10 +34,17 @@
 {
   "@context": "https://schema.org",
   "@type": "Psychologist",
+  "@id": "https://jsimaoneto.github.io/psimaoneto/#psicologo",
   "name": "José Simão Neto",
-  "description": "Psicólogo e Psicanalista Clínico, Consultor Organizacional",
+  "alternateName": "Psicólogo José Simão Neto — Campolim, Sorocaba",
+  "url": "https://jsimaoneto.github.io/psimaoneto/",
+  "image": "https://jsimaoneto.github.io/psimaoneto/imagens/hero.jpg",
+  "logo": "https://jsimaoneto.github.io/psimaoneto/imagens/logo.png",
+  "description": "Psicólogo e psicanalista clínico em Sorocaba, no bairro Campolim. Atendimento presencial no Centro Clínico Campolim e online para adultos, adolescentes e crianças. Consultor organizacional. CRP 06/92454-SP, mais de 23 anos de atuação.",
   "telephone": "+55-15-99755-5018",
   "email": "jsimaoneto@gmail.com",
+  "priceRange": "$$",
+  "currenciesAccepted": "BRL",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Av. Mário Campolim, 560, Parque Campolim",
@@ -46,8 +53,73 @@
     "postalCode": "18047-600",
     "addressCountry": "BR"
   },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -23.5064,
+    "longitude": -47.4527
+  },
+  "hasMap": "https://www.google.com/maps?q=Av.+M%C3%A1rio+Campolim,+560,+Parque+Campolim,+Sorocaba+-+SP",
   "worksFor": { "@type": "MedicalClinic", "name": "Centro Clínico Campolim" },
-  "areaServed": "Sorocaba e região, atendimento online em todo o mundo"
+  "areaServed": [
+    { "@type": "City", "name": "Sorocaba" },
+    { "@type": "Place", "name": "Parque Campolim, Sorocaba" },
+    { "@type": "AdministrativeArea", "name": "Região de Sorocaba, SP" }
+  ],
+  "knowsAbout": [
+    "Psicanálise clínica",
+    "Psicoterapia para adultos, adolescentes e crianças",
+    "Ansiedade, depressão e síndrome de pânico",
+    "Burnout e estresse profissional",
+    "Luto, traumas e relacionamentos",
+    "Orientação vocacional profissional",
+    "Psicodinâmica do trabalho e consultoria organizacional"
+  ],
+  "knowsLanguage": ["pt-BR", "en", "es"],
+  "availableService": [
+    { "@type": "MedicalTherapy", "name": "Psicanálise clínica para adultos" },
+    { "@type": "MedicalTherapy", "name": "Atendimento psicológico para adolescentes" },
+    { "@type": "MedicalTherapy", "name": "Atendimento psicológico infantil (RPG Terapia)" },
+    { "@type": "Service", "name": "Orientação Vocacional Profissional" },
+    { "@type": "Service", "name": "Consultoria organizacional e Manual de Estruturação Organizacional" }
+  ],
+  "availableChannel": {
+    "@type": "ServiceChannel",
+    "availableLanguage": "pt-BR",
+    "serviceUrl": "https://wa.me/5515997555018"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "4",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Artur H." },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "Eu estava em uma situação péssima quando fui levado até o Dr. Simão. Aos poucos fui me abrindo e tive uma transformação em sentimentos e pensamentos. Hoje tenho uma vida diferente, com mais autonomia. Graças ao Dr. José Simão Neto já sou uma versão muito melhor do que fui um dia."
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Cláudio Jr." },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "Conheci o Dr. Simão Neto em um momento difícil da minha adolescência. Suas consultas foram essenciais para a superação das dificuldades. Um excelente profissional, que ganhou o carinho e o reconhecimento de toda a minha família."
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Renata B." },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "Nas sessões de mãe e filha, o Dr. Neto teve a sensibilidade e a sabedoria de me guiar com muita clareza. Ele nos ensinou a soltar as rédeas sem soltar as mãos e devolveu à minha filha o protagonismo da própria vida. Sou eternamente grata pelo profissionalismo e pelo acolhimento humano."
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Gabi B." },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "Me mudei para Sorocaba e estava com dificuldade de adaptação. O Neto me ajudou a enfrentar a dor de um luto e a superar um divórcio muito difícil. Sou muito grata por toda a força, o apoio e o entendimento nesses anos."
+    }
+  ]
 }
 </script>
 </head>
@@ -126,14 +198,16 @@
 <section class="hero">
   <div class="wrap hero__grid">
     <div class="hero__text reveal">
-      <span class="hero__badge"><span class="dot"></span> Sorocaba SP · Presencial e Online</span>
+      <span class="hero__badge"><span class="dot"></span> Sorocaba SP · Campolim · Presencial e Online</span>
 
-      <h1>Escuta clínica, método e<em>elaboração.</em></h1>
+      <h1>Psicólogo em Sorocaba<em>— Campolim</em></h1>
+      <p class="hero__subtitle">Escuta clínica, método e elaboração.</p>
 
       <p class="hero__lead">
-        Prática em psicanálise clínica e em consultoria organizacional, orientada à compreensão da história
-        do sujeito, à ressignificação de experiências e à estruturação de processos, individuais ou
-        institucionais, mais consistentes e sustentáveis.
+        <strong>José Simão Neto é psicólogo e psicanalista clínico em Sorocaba</strong>, com atendimento
+        presencial no Centro Clínico Campolim (Parque Campolim) e online para todo o Brasil. Atende adultos,
+        adolescentes e crianças, além de orientação vocacional e consultoria organizacional.
+        CRP 06/92454-SP, mais de 23 anos de atuação.
       </p>
       <p class="hero__note">
         Mais de 23 anos de atuação em clínica privada, gestão de equipes e desenvolvimento organizacional.
@@ -876,6 +950,90 @@
   </div>
 </section>
 
+<!-- ==================== FAQ ==================== -->
+<section class="section" id="faq">
+  <div class="wrap">
+    <div class="section-head section-head--center reveal">
+      <span class="eyebrow">Perguntas frequentes</span>
+      <h2 class="section-title">Dúvidas sobre o <em>atendimento</em></h2>
+      <p class="section-lead">
+        Respostas objetivas às perguntas mais comuns de quem procura um psicólogo em Sorocaba, no Campolim.
+      </p>
+    </div>
+
+    <div class="faq">
+      <article class="faq__item reveal">
+        <h3 class="faq__q">Onde fica o psicólogo José Simão Neto em Sorocaba?</h3>
+        <p class="faq__a">O atendimento presencial acontece no Centro Clínico Campolim, na Av. Mário Campolim, 560, Parque Campolim, Sorocaba SP (CEP 18047-600). José Simão Neto é proprietário, diretor geral e responsável técnico da clínica desde 2008.</p>
+      </article>
+
+      <article class="faq__item reveal">
+        <h3 class="faq__q">O atendimento é presencial ou online?</h3>
+        <p class="faq__a">Ambos. As consultas presenciais são no Campolim, em Sorocaba, e há atendimento online por videochamada para todo o Brasil, com os mesmos parâmetros técnicos e de sigilo da modalidade presencial.</p>
+      </article>
+
+      <article class="faq__item reveal">
+        <h3 class="faq__q">Quais idades e queixas são atendidas?</h3>
+        <p class="faq__a">São atendidos adultos, adolescentes e crianças. A escuta psicanalítica contempla todas as queixas clínicas, entre elas ansiedade, síndrome do pânico, depressão, burnout, estresse, insônia, luto, traumas, problemas de relacionamento e conjugais, além de orientação vocacional profissional para adolescentes a partir de 15 anos.</p>
+      </article>
+
+      <article class="faq__item reveal">
+        <h3 class="faq__q">O psicólogo atende por convênio ou plano de saúde?</h3>
+        <p class="faq__a">O atendimento é particular, com emissão de recibo para reembolso. São atendidos todos os planos de saúde pelo sistema de reembolso.</p>
+      </article>
+
+      <article class="faq__item reveal">
+        <h3 class="faq__q">Como agendar uma consulta?</h3>
+        <p class="faq__a">O agendamento é feito diretamente pelo WhatsApp (15) 99755-5018 ou pelo e-mail jsimaoneto@gmail.com. O primeiro encontro é a Sessão de Avaliação Inicial, na qual se define, em conjunto, o formato de acompanhamento mais adequado ao caso.</p>
+      </article>
+
+      <article class="faq__item reveal">
+        <h3 class="faq__q">Qual a diferença entre psicólogo e psicanalista?</h3>
+        <p class="faq__a">José Simão Neto é psicólogo clínico (CRP 06/92454-SP) com formação e prática em psicanálise. O trabalho psicanalítico parte da escuta da história do sujeito e do inconsciente, voltado à elaboração, à ressignificação de experiências e à construção de autonomia psíquica.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Onde fica o psicólogo José Simão Neto em Sorocaba?",
+      "acceptedAnswer": { "@type": "Answer", "text": "O atendimento presencial acontece no Centro Clínico Campolim, na Av. Mário Campolim, 560, Parque Campolim, Sorocaba SP (CEP 18047-600). José Simão Neto é proprietário, diretor geral e responsável técnico da clínica desde 2008." }
+    },
+    {
+      "@type": "Question",
+      "name": "O atendimento é presencial ou online?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Ambos. As consultas presenciais são no Campolim, em Sorocaba, e há atendimento online por videochamada para todo o Brasil, com os mesmos parâmetros técnicos e de sigilo da modalidade presencial." }
+    },
+    {
+      "@type": "Question",
+      "name": "Quais idades e queixas são atendidas?",
+      "acceptedAnswer": { "@type": "Answer", "text": "São atendidos adultos, adolescentes e crianças. A escuta psicanalítica contempla todas as queixas clínicas, entre elas ansiedade, síndrome do pânico, depressão, burnout, estresse, insônia, luto, traumas, problemas de relacionamento e conjugais, além de orientação vocacional profissional para adolescentes a partir de 15 anos." }
+    },
+    {
+      "@type": "Question",
+      "name": "O psicólogo atende por convênio ou plano de saúde?",
+      "acceptedAnswer": { "@type": "Answer", "text": "O atendimento é particular, com emissão de recibo para reembolso. São atendidos todos os planos de saúde pelo sistema de reembolso." }
+    },
+    {
+      "@type": "Question",
+      "name": "Como agendar uma consulta?",
+      "acceptedAnswer": { "@type": "Answer", "text": "O agendamento é feito diretamente pelo WhatsApp (15) 99755-5018 ou pelo e-mail jsimaoneto@gmail.com. O primeiro encontro é a Sessão de Avaliação Inicial, na qual se define, em conjunto, o formato de acompanhamento mais adequado ao caso." }
+    },
+    {
+      "@type": "Question",
+      "name": "Qual a diferença entre psicólogo e psicanalista?",
+      "acceptedAnswer": { "@type": "Answer", "text": "José Simão Neto é psicólogo clínico (CRP 06/92454-SP) com formação e prática em psicanálise. O trabalho psicanalítico parte da escuta da história do sujeito e do inconsciente, voltado à elaboração, à ressignificação de experiências e à construção de autonomia psíquica." }
+    }
+  ]
+}
+</script>
+
 <!-- ==================== CONTATO ==================== -->
 <section class="section section--navy" id="contato">
   <div class="wrap">
@@ -968,6 +1126,7 @@
           <li><a href="#rh">Empresas</a></li>
           <li><a href="#trajetoria">Trajetória</a></li>
           <li><a href="#clinica">A clínica</a></li>
+          <li><a href="#faq">Perguntas frequentes</a></li>
         </ul>
       </div>
 
