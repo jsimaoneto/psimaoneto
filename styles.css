@@ -848,7 +848,7 @@ img.logo__mark--footer {
 
 .fachada {
   margin: clamp(2.5rem, 5vw, 3.5rem) auto 0;
-  max-width: 980px;
+  max-width: 600px;
   position: relative;
 }
 .fachada::before {
